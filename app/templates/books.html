@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <title>OSU Spring 2020 Hackathon</title>
+        <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+  </head>
+  <body>
+  <div>
+    <h1>Educational Accessibility</h1>
+    <ul class="nav">
+      <li class="navLi"><a class="active" href="{{ url_for('home') }}">Home</a></li>
+      <li class="navLi"><a href="{{ url_for('home') }}">Placeholder</a></li>
+      <li class="navLi"><a href="{{ url_for('home') }}">Placeholder</a></li>
+      <li class="navLi" style="float:right"><a href="{{ url_for('about') }}">About</a></li>
+    </ul>
+  </div>
+  <br>
+
+  <div class="iconContainer">
+    <div class="iconLinkBox" > </div>
+    <div class="iconLinkBox" > </div>
+    <div class="iconLinkBox" > </div>
+    <div class="iconLinkBox"> </div>
+  </div>
+
+
+<!-- BEGIN worldcat.org search box -->
+<div id="wcs2w">
+<form name="wcfw" id="wcfw" method="get" accept-charset="UTF-8" action="//www.worldcat.org/search" target="_top" style="margin: 0;">
+<input type="hidden" name="qt" value="affiliate" />
+<input type="hidden" name="ai" value="Maliha_maldz3" />
+<table>
+<tr><td colspan="2" style="text-align: center; font: 15px 'Arial Unicode MS', Arial, Helvetica, Verdana, sans-serif; line-height: 1.3em; margin: 0; text-align: center; width: 300px"><strong>Search for an item in libraries near you:</strong><br /><label for="q" style="color: #666;">Enter title, subject or author</label></td></tr>
+<tr>
+<td align="right"><input type="text" name="q" id="q" size="20" style="border: 1px solid #999; font: 12px 'Arial Unicode MS', Arial, Helvetica, Verdana, sans-serif; width: 150px;" /></td>
+<td align="left"><input type="image" name="wcsbtn2w" id="wcsbtn2w" src="//www.worldcat.org/searchbox/images/wcsbtn2.gif?ai=Maliha_maldz3" alt="Search WorldCat" title="Search WorldCat" /></td>
+</tr>
+<tr><td colspan="2" style="font: 10px 'Arial Unicode MS', Arial, Helvetica, Verdana, sans-serif; margin: 0; text-align: center;"><a style="color: #999" href="//www.worldcat.org/" alt="Visit WorldCat.org" title="Visit WorldCat.org">WorldCat.org >></a></td></tr>
+</table>
+</form>
+</div>
+<!-- END worldcat.org search box -->
+
+
+
+
+  </body>
