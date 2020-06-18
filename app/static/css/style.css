@@ -55,8 +55,13 @@ li a:hover {
 .booksBox{
   background-color: #7bcc8e;
 }
-.LinksBox{
+.linkBox{
   color:white; 
+  width: 300px; 
+  height: 300px; 
+  margin: 0px auto;
+  
+
 }
 .iconLinkBox{
   
