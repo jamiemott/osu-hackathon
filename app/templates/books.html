@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-      <title>OSU Spring 2020 Hackathon</title>
-        <link rel="stylesheet" href="../static/css/style.css" type="text/css">
-  </head>
-  <body>
-  <div>
-    <h1>Educational Accessibility</h1>
-    <ul class="nav">
-      <li class="navLi"><a class="active" href="{{ url_for('home') }}">Home</a></li>
-      <li class="navLi"><a href="{{ url_for('home') }}">Placeholder</a></li>
-      <li class="navLi"><a href="{{ url_for('home') }}">Placeholder</a></li>
-      <li class="navLi" style="float:right"><a href="{{ url_for('about') }}">About</a></li>
-    </ul>
-  </div>
-  <br>
-
-  <div class="iconContainer">
-    <div class="iconLinkBox" > </div>
-    <div class="iconLinkBox" > </div>
-    <div class="iconLinkBox" > </div>
-    <div class="iconLinkBox"> </div>
-  </div>
-
+{% extends "layout.html" %}
+{% block content %}
 
 <!-- BEGIN worldcat.org search box -->
 <div id="wcs2w">
@@ -42,7 +18,6 @@
 </div>
 <!-- END worldcat.org search box -->
 
+{% endblock %}
 
 
-
-  </body>
