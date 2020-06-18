@@ -1,5 +1,5 @@
 body {
-  background-color: lightgrey;
+  background-color: #F4F4F8;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Arial;
@@ -30,23 +30,44 @@ h2 {
 
 li a:hover {
   background-color: grey;
+ 
+
 }
 
 .active {
-  background-color: #b0b8b2;
+  background-color:#f87f3a;
 }
 
 .nav {
-	position: fixed;
-  top: 0;
+  top: 150px;
   width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #6f82ca;
 }
 
 .navLi {
   float: left;
+}
+
+.iconLinkBox{
+  
+  margin-left: 50px; 
+  margin-bottom: 40px; 
+  
+  width: 300px; 
+  height: 300px; 
+  border: 2px solid  white;
+  border-radius: 25px;
+  background-color: #a7b1d3;
+  
+}
+
+.iconContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
 }
