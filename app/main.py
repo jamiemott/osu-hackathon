@@ -26,19 +26,20 @@ def books():
 def links():
     return render_template('links.html')
 
-@app.route('/insert')
+@app.route('/insert' methods=['POST'])
 def insertDB():
     # prepare a cursor object using cursor() method
     db = conn.cursor()
 
-    # Prepare SQL query to INSERT a record into the database.
-    try:
-    # Execute the SQL command
-        db.execute("""INSERT INTO Websites (name, description, url, age, category) VALUES ('edX', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies.', 'https://www.edx.org/', 'adults', 'general'), ('Coursera', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums.', 'https://www.coursera.org/', 'adults', 'general'), ('Docsteach', 'National Archives online resource for teaching with primary documents.', 'https://www.docsteach.org', 'all', 'general');""")
-        # Commit your changes in the database
-        conn.commit()
-    except:
-        # Rollback in case there is any error
-        conn.rollback()
+    arr = [('edX', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies.', 'https://www.edx.org/', 'adults', 'general'), ('Coursera', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums.', 'https://www.coursera.org/', 'adults', 'general'), ('Docsteach', 'National Archives online resource for teaching with primary documents.', 'https://www.docsteach.org', 'all', 'general')]
+    for entry in arr:
+        # Prepare SQL query to INSERT a record into the database.
+        try:
+            # Execute the SQL command
+            db.execute("""INSERT INTO Websites (name, description, url, age, category) VALUES (%s, %s, %s, %s, %s);""", (entry)) # Commit your changes in the database
+            conn.commit()
+        except:
+            # Rollback in case there is any error
+            conn.rollback()
     db.close()
     return "Testing"
