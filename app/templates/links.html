@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Search For Free Educational Websites</h2>
+
+<div id="search">
+<form class="example" action="main.py">
+  <input type="text" placeholder="Search.." name="search">
+  <input type="submit" value="Submit">
+</form>
+
+
+</div>
+
+<h4>Please Select Target Audience and Categories</h4>
+
+<form action="/main.py">
+<div class="ages">
+    <input type="checkbox" id="kids" name="kids">
+  <label for="kids">Kids</label>
+    <input type="checkbox" id="teens" name="teens">
+  <label for="teens">Teens</label>
+    <input type="checkbox" id="adults" name="adults">
+  <label for="adults">Adults</label>
+</div>
+
+<div class="categories">
+  <input type="checkbox" id="general" name="general">
+  <label for="general">General</label>
+    <input type="checkbox" id="math" name="math">
+  <label for="math">Math</label>
+    <input type="checkbox" id="reading" name="reading">
+  <label for="reading">Reading</label>
+    <input type="checkbox" id="science" name="science">
+  <label for="science">Science</label>
+    <input type="checkbox" id="typing" name="typing">
+  <label for="typing">Typing</label>
+</div>
+    <br>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

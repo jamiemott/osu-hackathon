@@ -13,3 +13,7 @@ def about():
 @app.route('/books/')
 def books():
    return render_template('books.html')
+
+@app.route('/links/')
+def links():
+   return render_template('links.html')
