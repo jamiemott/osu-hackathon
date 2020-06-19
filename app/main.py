@@ -26,7 +26,7 @@ def books():
 def links():
     return render_template('links.html')
 
-@app.route('/insert' methods=['POST'])
+@app.route('/insert', methods=['POST'])
 def insertDB():
     # prepare a cursor object using cursor() method
     db = conn.cursor()
