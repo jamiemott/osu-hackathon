@@ -26,7 +26,7 @@ def books():
 def links():
     return render_template('links.html')
 
-@app.route('/insert')
+@app.route('/insert', methods=['Post'])
 def insertDB():
     # prepare a cursor object using cursor() method
     db = conn.cursor()
@@ -40,4 +40,5 @@ def insertDB():
     except:
         # Rollback in case there is any error
         conn.rollback()
+    db.close()
     return "Testing"
