@@ -4,7 +4,7 @@ import psycopg2
 from flask import Flask, render_template
 app = Flask(__name__)
 
-DATABASE_URL = os.environ['postgres://uxljrqiaodhmkp:26a74ef19a7168996b17cfd2fdfb63fd07eb685db6b13320b9ea943a77dae747@ec2-34-224-229-81.compute-1.amazonaws.com:5432/d34ui9hdrc2rdh']
+DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
