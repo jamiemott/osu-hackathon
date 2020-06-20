@@ -1,7 +1,7 @@
 import os
 import psycopg2
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
@@ -35,9 +35,22 @@ def links():
     if request.method == 'POST':
         age = request.form['age']  # age = request.form.get('age')
         category = request.form['category']  # category = request.form.get('category')
-        websites = Website.query.filter_by(category=category, age=age).all()
-        return render_template('results.html', websites=websites)
-    return render_template('links.html')
+        
+        try:
+            db = conn.cursor()
+            db.execute("SELECT vendor_id, vendor_name FROM vendors ORDER BY vendor_name")
+            print("Resources: ")
+            row = cur.fetchone()
+
+            while row is not None:
+                print(row)
+                row = cur.fetchone()
+
+            cur.close()
+        except (Exception, psycopg2.DatabaseError) as error:
+            print(error)
+    else:
+        return render_template('links.html')
 
 
 @app.route('/insert')
