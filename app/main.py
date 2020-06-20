@@ -10,22 +10,25 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 app = Flask(__name__)
 
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/about/')
 def about():
     return render_template('about.html')
 
+
 @app.route('/books/')
 def books():
     return render_template('books.html')
 
+
 @app.route('/contactus/')
 def suggest():
     return render_template('suggest.html')
+
 
 @app.route('/links/', methods=['POST', 'GET'])
 def links():
@@ -35,6 +38,7 @@ def links():
         websites = Website.query.filter_by(category=category, age=age).all()
         return render_template('results.html', websites=websites)
     return render_template('links.html')
+
 
 @app.route('/insert')
 def insertDB():
@@ -78,6 +82,7 @@ def insertDB():
     db.close()
     return "Added!"
 
+
 @app.route('/delete')
 def deleteDB():
     # prepare a cursor object using cursor() method
@@ -92,3 +97,22 @@ def deleteDB():
         conn.rollback()
     db.close()
     return "Deleted rows!"
+
+
+@app.route('/select')
+def get_sites():
+    # prepare a cursor object using cursor() method
+    db = conn.cursor()
+
+    try:
+        # Execute the SQL command
+        db.execute("""SELECT * FROM Websites WHERE age='kids' AND category='general';""")
+        rows = db.fetchall()
+        print("The number of sites: ", db.rowcount)
+        for row in rows:
+            print(row)
+    except:
+        # Rollback in case there is any error
+        conn.rollback()
+    db.close()
+    return "Selected rows!"
