@@ -1,7 +1,7 @@
 import os
 import psycopg2
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
@@ -9,6 +9,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 app = Flask(__name__)
 
+from models import Website
 
 @app.route('/')
 def home():
@@ -22,8 +23,13 @@ def about():
 def books():
     return render_template('books.html')
 
-@app.route('/links/')
+@app.route('/links/', methods=['POST', 'GET'])
 def links():
+    if request.method == 'POST':
+        age = request.form['age']  # age = request.form.get('age')
+        category = request.form['category']  # category = request.form.get('category')
+        websites = Website.query.filter_by(category=category, age=age).all()
+        return render_template('results.html', websites=websites)
     return render_template('links.html')
 
 @app.route('/insert')
