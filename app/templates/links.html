@@ -52,8 +52,8 @@
 
   {% for row in rows %}
   <div>
-    <h4><a href=row.url></a>row.name</h4>
-    <p>row.description</p>
+    <h4><a href="{{row.url}}"></a>{{row.name}}</h4>
+    <p>{{row.description}}</p>
   </div>
   {% endfor %}
 
