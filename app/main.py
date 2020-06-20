@@ -49,6 +49,7 @@ def links():
             db.close()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
+        return render_template('links.html')
     else:
         return render_template('links.html')
 
