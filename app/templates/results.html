@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  {% if websites %}
+  <h1>Search Results</h1>
+
+  {% for website in websites %}
+  <div>website.url</div>
+  {% endfor %}
+
+{% endblock %}
