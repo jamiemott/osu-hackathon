@@ -81,7 +81,7 @@ def deleteDB():
 
     try:
         # Execute the SQL command
-        db.execute("""DELETE FROM Websites WHERE website_id = 6;""") # Commit your changes in the database
+        db.execute("""DELETE FROM Websites WHERE website_id IN (7, 8, 9);""") # Commit your changes in the database
         conn.commit()
     except:
         # Rollback in case there is any error
