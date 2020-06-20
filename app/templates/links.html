@@ -44,5 +44,17 @@
     <br>
   <input class="button" type="submit" value="Submit">
 </form>
+<br>
+<br>
+
+{% if len(rows) > 0 %}
+  <h3>Resources</h3>
+
+  {% for row in rows %}
+  <div>
+    <h4><a href=row.url></a>row.name</h4>
+    <p>row.description</p>
+  </div>
+  {% endfor %}
 
 {% endblock %}

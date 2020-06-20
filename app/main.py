@@ -35,7 +35,7 @@ def links():
     if request.method == 'POST':
         ageReq = request.form['age']  # age = request.form.get('age')
         categoryReq = request.form['category']  # category = request.form.get('category')
-        
+        rows = []
         try:
             db = conn.cursor()
             db.execute("""SELECT * FROM Websites WHERE age=%s AND category=%s;""", (ageReq, categoryReq))
@@ -43,13 +43,13 @@ def links():
             row = db.fetchone()
 
             while row is not None:
+                rows += row
                 print(row)
                 row = db.fetchone()
-
             db.close()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
-        return render_template('links.html')
+        return render_template('links.html', rows=rows)
     else:
         return render_template('links.html')
 
@@ -113,20 +113,20 @@ def deleteDB():
     return "Deleted rows!"
 
 
-@app.route('/select')
-def get_sites():
-    # prepare a cursor object using cursor() method
-    db = conn.cursor()
-
-    try:
-        # Execute the SQL command
-        db.execute("""SELECT * FROM Websites WHERE age='kids' AND category='general';""")
-        rows = db.fetchall()
-        print("The number of sites: ", db.rowcount)
-        for row in rows:
-            print(row)
-    except:
-        # Rollback in case there is any error
-        conn.rollback()
-    db.close()
-    return "Selected rows!"
+# @app.route('/select')
+# def get_sites():
+#     # prepare a cursor object using cursor() method
+#     db = conn.cursor()
+#
+#     try:
+#         # Execute the SQL command
+#         db.execute("""SELECT * FROM Websites WHERE age='kids' AND category='general';""")
+#         rows = db.fetchall()
+#         print("The number of sites: ", db.rowcount)
+#         for row in rows:
+#             print(row)
+#     except:
+#         # Rollback in case there is any error
+#         conn.rollback()
+#     db.close()
+#     return "Selected rows!"
