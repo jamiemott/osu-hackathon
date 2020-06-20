@@ -23,6 +23,76 @@
 </div>
 <!-- END worldcat.org search box -->
 
+<!--Open Library Api Search Bar will go here?-->
+<div>
+    <form id = "OpenLibForm" method = "POST" action = "/books" >
+    <h3> Or search a book from Open Library </h3>
+        <p>Open Library is a site that provides free books online </p>
+    <div>
+        <label> Title of Book: </label>
+        <input type="text" name ="title"><br>
+    </div>
+    <div>
+        <label>Author:</label>
+        <input type ="text" name ="author"> <br>
+    </div>
+    <div>
+        <label>Subject:</label>
+        <input type ="text" name ="subject"> <br>
+    </div>
+        <input type = "submit" value ="Search Book">
+    </form>
+</div>
+
+<p>{{output}}</p>
+
+{% if status=="true" %}
+<div>
+    <h3>Results</h3>
+    <table   border="1" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+
+            <th>Title</th>
+            <th>Sneak Peek</th>
+            <th>Languages Available:</th>
+            <th>Status</th>
+
+            <th>Link</th>
+    <!--   for links http://openlibrary.org/books/-->
+
+        </tr>
+
+        {% for x in booksList %}
+        <tr>
+            <td>{{x["title"]}}</td>
+            <td>{{x["first_sentence"]}}</td>
+             <td>{% for items in x["language"] %}
+                       {{items}}<br>
+                 {% endfor %}
+             </td>
+            <td>
+
+                    {{x["availability"]["status"]}}
+
+            </td>
+            <td>
+                <form action=http://openlibrary.org/{{x["seed"][0]}}">
+                    <input type="submit" value="Link">
+                </form>
+    <!--            <a  href=http://openlibrary.org/books/{{x["text"][0]}}>Link</a>-->
+            </td>
+        </tr>
+         {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+{% endif %}
+
+
+<!--End of Open Library API search bar -->
 {% endblock %}
 
 

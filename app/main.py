@@ -1,5 +1,6 @@
 import os
-import psycopg2
+import psycopg2, \
+import requests, json
 
 from flask import Flask, render_template, request, redirect
 
@@ -20,9 +21,92 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/books/')
+# @app.route('/books/')
+# def books():
+#
+#
+#     return render_template('books.html')
+@app.route('/books/', methods=["GET", "POST"])
 def books():
-    return render_template('books.html')
+
+   if request.method =="POST":
+
+      req = request.form
+      title = req["title"]
+      author = req["author"]
+      subject = req["subject"]
+
+      #check if string is blank and remove end of string spaces
+
+      title = title.strip()
+      author = author.strip()
+      subject = subject.strip()
+
+      if title=="" and author == "" and subject=="":
+
+         return render_template('books.html', output="No items found, try again.")
+      #replace spaces with "+"
+      title= title.replace(" ", "+")
+      author=author.replace(" ", "+")
+      subject=subject.replace(" ", "+")
+
+      print(title, author, subject)
+      payload =""
+
+      countPayLoad = 0
+      # set up payload
+      #if there's a title
+      if title:
+         if countPayLoad==0:
+
+            payload += "title=" + title
+         else:
+            payload += "&title=" + title
+      if author:
+         if countPayLoad == 0:
+            payload += "author=" + author
+         else:
+            payload += "&author=" + author
+      if subject:
+         if countPayLoad == 0:
+            payload += "subject=" + subject
+         else:
+            payload += "&subject=" + subject
+
+
+      base = "http://openlibrary.org/search.json?"
+
+      base+=payload + "&has_fulltext=true"
+      # print(base)
+      response = requests.get(base)
+
+      info = response.json()
+      # print(type(info))
+      # print(response.text)
+
+      #print only 10 of the most relevant results
+
+      # print(info["docs"][0])
+      # print(info["docs"][1])
+      output=info
+
+      if output["num_found"] ==0:
+         return render_template('books.html', output="No items found, try again.")
+
+      books = info["docs"]
+
+
+      for x in books:
+         if x["availability"]["status"]=="error":
+            x["availability"]["status"]= "not available"
+
+
+      return render_template('books.html', status="true", output="", booksList= books, )
+
+
+   return render_template('books.html', status ="false")
+
+
 
 
 @app.route('/contactus/')
