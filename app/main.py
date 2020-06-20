@@ -91,4 +91,4 @@ def deleteDB():
             # Rollback in case there is any error
             conn.rollback()
     db.close()
-    return "Deleted!"
+    return "Deleted rows!"
