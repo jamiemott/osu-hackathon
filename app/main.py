@@ -42,7 +42,11 @@ def insertDB():
     db = conn.cursor()
 
     # arr = [('test1', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies.', 'https://www.edx.org/', 'adults', 'general'), ('test2', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums.', 'https://www.coursera.org/', 'adults', 'general')]
-    arr = [('Crash Course', 'Tons of awesome courses in one awesome channel!', 'https://www.youtube.com/user/crashcourse/featured', 'all', 'general'),
+    arr = [('Starfall', 'On the Starfall website and in Starfall classrooms, children have fun while learning in an environment of collaboration, wonderment, and play.', 'https://www.starfall.com/h/', 'kids', 'general'),
+    ('Khan Academy', 'A nonprofit with the mission to provide a free, world-class education for anyone, anywhere.', 'https://www.khanacademy.org/', 'all', 'general'),
+    ('edX', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies.', 'https://www.edx.org/', 'adults', 'general'),
+    ('Coursera', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums.', 'https://www.coursera.org/', 'adults', 'general'),
+    ('Crash Course', 'Tons of awesome courses in one awesome channel!', 'https://www.youtube.com/user/crashcourse/featured', 'all', 'general'),
     ('Digital Public Library of America', 'Empowers people to learn, grow, and contribute to a diverse and better-functioning society by maximizing access to our shared history, culture, and knowledge.', 'https://dp.la', 'all', 'general'),
     ('National Geographic Kids', 'Explore', 'https://kids.nationalgeographic.com/', 'kids', 'science'),
     ('4-H', '4-H welcomes young people from all beliefs and backgrounds, empowering them to create positive change in their communities', 'https://4-h.org/parents/stem-agriculture/', 'kids', 'science'),
@@ -52,7 +56,7 @@ def insertDB():
     ('Slader', 'Step by step homework solutions. Slader is an independent website supported by millions of students and contributors from all across the globe.', 'teens', 'general'),
     ('Typing', 'Extensive Keyboarding Curriculum & So Much More', 'https://www.typing.com/', 'all', 'typing'),
     ('Jungle Junior', 'Through the course of about 200 friendly, colorful videos and interactive lessons, kids will learn all about the alphabet and practice sight words, word families, and simple sentences.', 'https://www.typingclub.com/kids-typing', 'kids', 'typing'),
-    ('Wplfram Alpha', 'Compute expert-level answers using Wolfram’s breakthrough algorithms, knowledge base and AI technology', 'https://www.wolframalpha.com/', 'adults', 'math'),
+    ('Wolfram Alpha', 'Compute expert-level answers using Wolfram’s breakthrough algorithms, knowledge base and AI technology', 'https://www.wolframalpha.com/', 'adults', 'math'),
     ('K-5 Learning', 'Award winning program for after school and summer study. Watch your kids build reading, math and study skills online.', 'https://www.k5learning.com/', 'kids', 'math'),
     ('Purplemath', 'These free lessons are cross-referenced to help you find related material, and the "Search" box on every page is available to help you find whatever math content you''re looking for.', 'https://www.purplemath.com/', 'all', 'math'),
     ('Scholastic', 'Day-by-day projects to keep kids reading, thinking, and growing.', 'https://classroommagazines.scholastic.com/support/learnathome.html', 'kids', 'reading'),
@@ -81,7 +85,7 @@ def deleteDB():
 
     try:
         # Execute the SQL command
-        db.execute("""DELETE FROM Websites WHERE website_id IN (23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35);""") # Commit your changes in the database
+        db.execute("""DELETE FROM Websites;""") # Commit your changes in the database
         conn.commit()
     except:
         # Rollback in case there is any error
