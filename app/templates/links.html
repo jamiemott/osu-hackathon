@@ -50,11 +50,12 @@
 {% if len(rows) > 0 %}
   <h3>Resources</h3>
 
-  {% for row in rows %}
-  <div>
-    <a href="{{row.url}}">{{row.name}}</a>
-    <p>{{row.description}}</p>
-  </div>
-  {% endfor %}
+{% for row in rows %}
+<div class="result">
+  <a href="{{row.url}}">{{row.name}}</a>
+  <p>{{row.description}}</p>
+</div>
+{% endfor %}
+{% endif %}
 
 {% endblock %}
