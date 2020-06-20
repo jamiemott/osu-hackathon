@@ -93,3 +93,24 @@ li a:hover {
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
+/*suggest page*/
+
+.button{
+  background-color: #7bcc8e;
+  color: white;
+  border: 2px solid  white;
+}
+
+form{
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+
+input[type=text]{
+  margin: 8px 0;
+}
+
+.disclaimer{
+  margin-left: 40px;
+}
