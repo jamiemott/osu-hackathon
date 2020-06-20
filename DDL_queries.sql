@@ -34,9 +34,9 @@ INSERT INTO Websites ('name', 'description', 'url', 'age', 'category') VALUES
     ('Wplfram Alpha', 'Compute expert-level answers using Wolfram’s breakthrough algorithms, knowledge base and AI technology', 'https://www.wolframalpha.com/', 'adults', 'math'),
     ('K-5 Learning', 'Award winning program for after school and summer study. Watch your kids build reading, math and study skills online.', 'https://www.k5learning.com/', 'kids', 'math'),
     ('Purplemath', 'These free lessons are cross-referenced to help you find related material, and the "Search" box on every page is available to help you find whatever math content you''re looking for.', 'https://www.purplemath.com/', 'all', 'math'),
-    (''),
-    (),
-    (),
-    ();
-
+    ('Scholastic', 'Day-by-day projects to keep kids reading, thinking, and growing.', 'https://classroommagazines.scholastic.com/support/learnathome.html', 'kids', 'reading'),
+    ('National Library Service', 'NLS is a free braille and talking book library service for people with temporary or permanent low vision, blindness, or a physical disability that prevents them from reading or holding the printed page.', 'https://www.loc.gov/nls/', 'all', 'reading'),
+    ('pbskids', 'Fun games and videos.', 'https://pbskids.org/games/', 'kids', 'games'),
+    ('Funbrain', 'Funbrain offers hundreds of games, books, comics, and videos that develop skills in math, reading, problem-solving and literacy.', 'https://www.funbrain.com/games', 'kids', 'games'),
+    ('Mr.Nussbaum', 'Offers dozens of interactive games specifically designed to pinpoint one or several essential concepts taught in elementary years,', 'https://mrnussbaum.com/', 'kids', 'games');
 
