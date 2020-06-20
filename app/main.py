@@ -23,6 +23,10 @@ def about():
 def books():
     return render_template('books.html')
 
+@app.route('/contactus/')
+def suggest():
+    return render_template('suggest.html')
+
 @app.route('/links/', methods=['POST', 'GET'])
 def links():
     if request.method == 'POST':
