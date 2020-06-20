@@ -68,4 +68,23 @@ def insertDB():
             # Rollback in case there is any error
             conn.rollback()
     db.close()
-    return "Testing"
+    return "Added!"
+
+@app.route('/delete')
+def deleteDB():
+    # prepare a cursor object using cursor() method
+    db = conn.cursor()
+
+    arr = [6, 7, 8, 9]
+
+    for entry in arr:
+        # Prepare SQL query to INSERT a record into the database.
+        try:
+            # Execute the SQL command
+            db.execute("""DELETE FROM Websites WHERE website_id = %s;""", (entry)) # Commit your changes in the database
+            conn.commit()
+        except:
+            # Rollback in case there is any error
+            conn.rollback()
+    db.close()
+    return "Deleted!"
