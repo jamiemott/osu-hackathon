@@ -103,6 +103,7 @@ li a:hover {
   padding-right: 15px;
   padding-top: 2px;
   padding-bottom: 2px;
+  border: 1px solid #ccc;
 }
 
 form{
