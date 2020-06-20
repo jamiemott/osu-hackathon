@@ -30,7 +30,7 @@
 
 <h4>Please Select a Category</h4>
 <div class="categories">
-  <input type="radio" id="general" name="category" value="general">
+  <input type="radio" id="general" name="category" value="general" checked>
   <label for="general">General</label>
     <input type="radio" id="math" name="category" value="math">
   <label for="math">Math</label>
@@ -52,7 +52,7 @@
 
   {% for row in rows %}
   <div>
-    <h4><a href="{{row.url}}"></a>{{row.name}}</h4>
+    <a href="{{row.url}}">{{row.name}}</a>
     <p>{{row.description}}</p>
   </div>
   {% endfor %}
