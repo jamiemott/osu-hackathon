@@ -40,13 +40,13 @@ def links():
             db = conn.cursor()
             db.execute("""SELECT * FROM Websites WHERE age=%s AND category=%s;""", (ageReq, categoryReq))
             print("Resources: ")
-            row = cur.fetchone()
+            row = db.fetchone()
 
             while row is not None:
                 print(row)
-                row = cur.fetchone()
+                row = db.fetchone()
 
-            cur.close()
+            db.close()
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
     else:
