@@ -13,7 +13,7 @@
 </form>
 </div>
 
-<h4>Please Select Target Audience and Categories</h4>
+<h4 class="search">Please Select a Target Audience</h4>
 
 <form action="/links/" method="post">
 <div class="ages">
@@ -27,6 +27,7 @@
   <label for="adults">Adults</label>
 </div>
 
+<h4 class="search">Please Select a Category</h4>
 <div class="categories">
   <input type="radio" id="general" name="category" value="general">
   <label for="general">General</label>
@@ -40,7 +41,7 @@
   <label for="typing">Typing</label>
 </div>
     <br>
-  <input type="submit" value="Submit">
+  <input class="button" type="submit" value="Submit">
 </form>
 
 {% endblock %}
