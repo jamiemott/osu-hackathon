@@ -33,12 +33,12 @@ def suggest():
 @app.route('/links/', methods=['POST', 'GET'])
 def links():
     if request.method == 'POST':
-        age = request.form['age']  # age = request.form.get('age')
-        category = request.form['category']  # category = request.form.get('category')
+        ageReq = request.form['age']  # age = request.form.get('age')
+        categoryReq = request.form['category']  # category = request.form.get('category')
         
         try:
             db = conn.cursor()
-            db.execute("SELECT vendor_id, vendor_name FROM vendors ORDER BY vendor_name")
+            db.execute("""SELECT * FROM Websites WHERE age=%s AND category=%s;""", (ageReq, categoryReq))
             print("Resources: ")
             row = cur.fetchone()
 
