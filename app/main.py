@@ -38,12 +38,7 @@ def insertDB():
     db = conn.cursor()
 
     # arr = [('test1', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies.', 'https://www.edx.org/', 'adults', 'general'), ('test2', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums.', 'https://www.coursera.org/', 'adults', 'general')]
-    arr = [('Starfall', 'On the Starfall website and in Starfall classrooms, children have fun while learning in an environment of collaboration, wonderment, and play.', 'https://www.starfall.com/h/', 'kids', 'general'),
-	('Khan Academy', 'a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.', 'https://www.khanacademy.org/', 'all', 'general'),
-    ('edX', 'Founded by Harvard and MIT, edX is home to more than 20 million learners, the majority of top-ranked universities in the world and industry-leading companies. ', 'https://www.edx.org/', 'adults', 'general'),
-    ('Coursera', 'Hundreds of free courses give you access to on-demand video lectures, homework exercises, and community discussion forums, taught by top instructors from world-class universities and companies.', 'https://www.coursera.org/', 'adults', 'general')
-    ('Docsteach', 'National Archives online resource for teaching with primary documents.', 'https://www.docsteach.org', 'all', 'general'),
-    ('Crash Course', 'Tons of awesome courses in one awesome channel!', 'https://www.youtube.com/user/crashcourse/featured', 'all', 'general'),
+    arr = [('Crash Course', 'Tons of awesome courses in one awesome channel!', 'https://www.youtube.com/user/crashcourse/featured', 'all', 'general'),
     ('Digital Public Library of America', 'Empowers people to learn, grow, and contribute to a diverse and better-functioning society by maximizing access to our shared history, culture, and knowledge.', 'https://dp.la', 'all', 'general'),
     ('National Geographic Kids', 'Explore', 'https://kids.nationalgeographic.com/', 'kids', 'science'),
     ('4-H', '4-H welcomes young people from all beliefs and backgrounds, empowering them to create positive change in their communities', 'https://4-h.org/parents/stem-agriculture/', 'kids', 'science'),
