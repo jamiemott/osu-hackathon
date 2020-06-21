@@ -47,17 +47,4 @@
 <br>
 <br>
 
-{% if rows %}
-  <h3>Resources</h3>
-  {% if rows |length == 0 % %}
-    <p>No results found, please try your search again</p>
-  {% endif %}
-  {% for row in rows %}
-  <div class="result">
-    <a href="{{row.url}}">{{row.name}}</a>
-    <p>{{row.description}}</p>
-  </div>
-  {% endfor %}
-{% endif %}
-
 {% endblock %}
