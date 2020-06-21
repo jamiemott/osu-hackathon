@@ -1,6 +1,6 @@
 import os
 import psycopg2
-
+import requests, json
 
 from flask import Flask, render_template, request, redirect
 
