@@ -14,11 +14,14 @@ h1 {
 
 .home-title {
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
-  font-size: 40px;
+  font-size: 72px;
+  color: #666666;
 }
 
 .title{
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
+  font-size: 48px;
+  color: #666666;
 }
 
 h2 {
