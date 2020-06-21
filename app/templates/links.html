@@ -49,14 +49,13 @@
 
 {% if rows %}
   <h3>Resources</h3>
-  <p>{{rows}}</p>
   {% if rows |length == 0 %}
     <p>No results, please try your search again.</p>
   {% endif %}
   {% for row in rows %}
   <div class="result">
-    <a href="{{row.url}}">{{row.name}}</a>
-    <p>{{row.description}}</p>
+    <a href="{{row[3]}}">{{row[1]}}</a>
+    <p>{{row[2]}}</p>
   </div>
   {% endfor %}
 {% endif %}
