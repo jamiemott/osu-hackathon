@@ -1,12 +1,12 @@
 import os
 import psycopg2
-import requests, json
+
 
 from flask import Flask, render_template, request, redirect
 
-DATABASE_URL = os.environ['DATABASE_URL']
+# DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 app = Flask(__name__)
 
