@@ -14,7 +14,11 @@ h1 {
 
 .home-title {
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
+  font-size: 40px;
+}
 
+.title{
+  font-family: 'Gloria Hallelujah', cursive, sans-serif;
 }
 
 h2 {
@@ -97,6 +101,7 @@ li a:hover {
 .about {
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
 }
 
 /*suggest page*/
