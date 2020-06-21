@@ -14,7 +14,7 @@ h1 {
 
 .home-title {
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
-  /*font-size: large;*/
+
 }
 
 h2 {
@@ -137,6 +137,12 @@ input[type=text]{
 /* books page */
 
 .resultsDiv{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+/* about */
+.aboutBlurb{
   margin-left: 40px;
   margin-right: 40px;
 }
