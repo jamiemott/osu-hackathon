@@ -127,7 +127,7 @@ def links():
             row = db.fetchone()
 
             while row is not None:
-                rows += row
+                rows += [row]
                 print(row)
                 row = db.fetchone()
             db.close()
