@@ -130,10 +130,13 @@ input[type=text]{
 .search{
   margin-left: 40px;
 }
+.linksResultsTable{
+  margin-left: 40px%
+}
 
 /* books page */
 
 .resultsDiv{
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin-left: 40px;
+  margin-right: 40px;
 }
