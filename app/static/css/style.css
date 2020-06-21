@@ -32,7 +32,11 @@ h2 {
 
 /* Navigation bar styling citation: https://www.w3schools.com/css/css_navbar.asp */
 
- li a {
+li {
+  width: 40px;
+}
+
+li a {
   display: block;
   color: white;
   text-align: center;
