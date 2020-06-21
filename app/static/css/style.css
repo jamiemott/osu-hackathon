@@ -32,9 +32,6 @@ h2 {
 
 /* Navigation bar styling citation: https://www.w3schools.com/css/css_navbar.asp */
 
-li {
-  width: 60px;
-}
 
 li a {
   display: block;
